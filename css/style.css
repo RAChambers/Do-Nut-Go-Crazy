@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Condensed&display=swap');
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+}
+.dashboard__speedometer{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 64px;
+    color: greenyellow;
+}
+.dashboard__check-engine-light{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 24px;
+    color: black;
+}
+
+.dashboard__check-engine-light--on{
+    color: #e7a50c;
+}

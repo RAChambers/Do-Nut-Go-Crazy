@@ -1,0 +1,35 @@
+<>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .containerTab {
+    padding: 20px;
+    color: white;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .closebtn {
+    float: right;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  

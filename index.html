@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css\index.css">
-    
-    <title>Cookie Monster</title>
+    <title>Do-nut Go Crazy!</title>
 </head>
 <body>
     <div style="text-align:center">
-        <h1>Welcome to Cookie Crush</h1>
+        <h1>Welcome to Do-nut Go Crazy!</h1>
         <p>Click On the Boxes to Learn More</p>
     </div>
     <div class="row">
@@ -34,7 +33,7 @@
       <div id="b2" class="containerTab" style="display:none;background:#F9E9B3">
         <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
         <h2>A-HA!</h2>
-        <p><b>Donuts Amok! was inspired and modeled after a game created by a French programmer in 2013 called <italics>Cookie Clicker</italics>. 
+        <p><b>Do-nut Go Crazy! was inspired and modeled after a game created by a French programmer in 2013 called <italics>Cookie Clicker</italics>.
            By clicking on the donut, users can virtually bake a single donut per click. They can then use those donuts to buy 
            purchase <italics>Auto Clickers & Click Multipliers</italics> which can create/bake even more donuts!!</b></p>
       </div>
@@ -49,20 +48,23 @@
             <br>(614) 462-0560
         </p>
       </div>
-      
-      
-          
 
-        
-    <p>These are 'p' elements</p>
-    <p>These are 'p' elements</p>
-    <p>These are 'p' elements</p>
+    <div class="container">
+        <div class="anchor">
+            <h1>Donut Maker</h1>
+            <h2>You have <span class="donut-count">0</span> donuts</h2>
+            <button class="click-button">Click to add donuts!</button>
+        </div>
+    </div>
+    <script src="/src/js/app.js" type  = "module"></script>
+          
     <script src="./js/main.js"></script>
   
     <div class="container">
         <div class="anchor"></div>
     </div>
     <script>
+        <h1>Donut Maker</h1>
         function openTab(tabName) {
           var i, x;
           x = document.getElementsByClassName("containerTab");

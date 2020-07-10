@@ -2,7 +2,17 @@
 <html lang="en">
 <head>
   <script>
-    var donutcount = 0;
+      function update(){
+
+      }
+
+      var donutcount = 0;
+      var autoClick = 0;
+      function timer(){
+        donutcount = donutcount + autoClick;
+      update()
+      }
+      setInterval(timer, 1000)
   </script>
   <title>The Do-nut Go Crazy Game</title>
     <meta charset="UTF-8">
@@ -54,14 +64,20 @@
     </div>      
   </div>
      <a href="#" onclick="add()"><img src="images\chocolatedonut.png" alt=""></a>         
-    <h3>You have:<input type="text" id="text" disabled style="text-align: center;"> donuts!</h3>
+    <h2>You have:<input type="text" id="text" disabled style="text-align: center;"> donuts!</h2>
     <script>
       function add() {
         donutcount = donutcount + 1
         document.getElementById('text').value = donutcount;
         document.title = donutcount + "Donuts"
-      }
+      }      
     </script>
+    <button><a href="#" onclick="save()">Save</a></button>   
+    <button><a href="#" onclick="Load()">Load</a></button>   
+    <br><br>
+    <a href="#" onclick="buyAutoClick()"><img src="images\chocolatedonut.png" alt=""></a>
+    <h2>Buy 1 Auto-Clicker</h2>
+
     <script>
         function openTab(tabName) {
           var i, x;
@@ -74,7 +90,27 @@
         </script> 
      <script src="/src/app.js"></script>
      <script src="./js/main.js"></script>
- 
+     <br><br>
+     <button><a href="#" onclick="save()">Save</a></button>   
+     <button><a href="#" onclick="Load()">Load</a></button>   
+     <br><br>
+
+     <!-- <p>Buy 1 Auto-Clicker</p>
+     <button><a href="#" onclick="buyAutoClick()"><img src="images\pinkdonut.png"></a></button> -->
+
+     <script>
+       function save(){
+         localStorage.setItem("donutcount", donutcount);
+       }
+       function load(){
+         donutcount = localStorage.getItem("donutcount");
+         donutcount = parseInt(donutcount);
+         document.getElementById('text').value = donutcount;
+         document.title = donutcount + "Donuts";
+       }
+
+     </script>
+
     </div>  
 </body>
 </html>

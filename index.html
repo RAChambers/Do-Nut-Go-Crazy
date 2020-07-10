@@ -1,68 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    var donutcount = 0;
+  </script>
+  <title>The Do-nut Go Crazy Game</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src\css\index.css">
-    <title>Do-nut Go Crazy!</title>
 </head>
-<body>
-    <div style="text-align:center">
-        <h1>Welcome to Do-nut Go Crazy!</h1>
-        <p>Click On the Boxes to Learn More</p>
-    </div>
-    <div class="row">
-        <div class="column" onclick="openTab('b1');" style="background :#8B4513;">
-          ABOUT
-        </div>
-        <div class="column" onclick="openTab('b2');" style="background:#F9E9B3;">
-          INSPIRATION
-        </div>
-        <div class="column" onclick="openTab('b3');" style="background:pink;">
-          CREATORS
-        </div>
-      </div>
-      <div id="b1" class="containerTab" style="display:none;background:#8B4513">
-        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-        <h2>Fred the Baker Baking Company</h2>
-        <p>Fred the Baker has been in business baking delicious donuts for 25 years! 
-            He is ready to retire but somehow wants his love for donuts continue on. 
-            Fred has created Donuts Amok! so that everyone can virtually bake donuts forever!</p>
-      </div>
-      
-      <div id="b2" class="containerTab" style="display:none;background:#F9E9B3">
-        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-        <h2>A-HA!</h2>
-        <p><b>Do-nut Go Crazy! was inspired and modeled after a game created by a French programmer in 2013 called <italics>Cookie Clicker</italics>.
-           By clicking on the donut, users can virtually bake a single donut per click. They can then use those donuts to buy 
-           purchase <italics>Auto Clickers & Click Multipliers</italics> which can create/bake even more donuts!!</b></p>
-      </div>
-      
-      <div id="b3" class="containerTab" style="display:none;background:pink">
-        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-        <h2>GYRLCODE</h2>
-        <p>We are an advertising and design firm, situated in downtown Columbus, Ohio.  
-            We specialize in Web, Marketing and Advertising Campaign Development.<br>
-            Contact us:<br>
-            1177 East Broad Street <br>Columbus, Ohio 43209
-            <br>(614) 462-0560
-        </p>
-      </div>
 
-    <div class="container">
-        <div class="anchor">
-            <h1>Donut Maker</h1>
-            <h2>You have <span class="donut-count">0</span> donuts</h2>
-            <button class="click-button">Click to add donuts!</button>
-        </div>
+<body>
+<div class="wrapper">
+  <div style="text-align:center">
+    <h1>Welcome to Do-nut Go Crazy!</h1>
+    <p>Click On the Boxes to Learn More</p>
+  </div>
+  <div class="row">
+    <div class="column" onclick="openTab('b1');" style="background :#8b451369;">
+      ABOUT
     </div>
-    <script src="/src/js/app.js" type  = "module"></script>
-          
-    <script src="./js/main.js"></script>
+    <div class="column" onclick="openTab('b2');" style="background:#f9e9b34f;">
+      INSPIRATION
+    </div>
+    <div class="column" onclick="openTab('b3');" style="background:rgba(255, 192, 203, 0.37);">
+      CREATORS
+    </div>
   
-    <div class="container">
-        <div class="anchor"></div>
+    <div id="b1" class="containerTab" style="display:none;background:#8B4513">
+      <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+      <h2>Fred the Baker Baking Company</h2>
+      <p>Fred the Baker has been in business baking delicious donuts for 25 years! 
+          He is ready to retire but somehow wants his love for donuts continue on. 
+          Fred has created Donuts Amok! so that everyone can virtually bake donuts forever!</p>
     </div>
+
+    <div id="b2" class="containerTab" style="display:none;background:#F9E9B3">
+      <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+      <h2>A-HA!</h2>
+      <p><b>Do-nut Go Crazy! was inspired and modeled after a game created by a French programmer in 2013 called <italics>Cookie Clicker</italics>.
+          By clicking on the donut, users can virtually bake a single donut per click. They can then use those donuts to buy 
+          purchase <italics>Auto Clickers & Click Multipliers</italics> which can create/bake even more donuts!!</b></p>
+    </div>
+
+    <div id="b3" class="containerTab" style="display:none;background:pink">
+      <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+      <h2>GYRLCODE</h2>
+      <p>We are an advertising and design firm, situated in downtown Columbus, Ohio.  
+          We specialize in Web, Marketing and Advertising Campaign Development.<br>
+          Contact us:<br>
+          1177 East Broad Street <br>Columbus, Ohio 43209
+          <br>(614) 462-0560    </p>
+    </div>      
+  </div>
+     <a href="#" onclick="add()"><img src="images\chocolatedonut.png" alt=""></a>         
+    <h3>You have:<input type="text" id="text" disabled style="text-align: center;"> donuts!</h3>
+    <script>
+      function add() {
+        donutcount = donutcount + 1
+        document.getElementById('text').value = donutcount;
+        document.title = donutcount + "Donuts"
+      }
+    </script>
     <script>
         function openTab(tabName) {
           var i, x;
@@ -72,7 +71,10 @@
           }
           document.getElementById(tabName).style.display = "block";
         }
-        </script>
-    <!-- <script src="/src/app.js"></script> -->
+        </script> 
+     <script src="/src/app.js"></script>
+     <script src="./js/main.js"></script>
+ 
+    </div>  
 </body>
 </html>

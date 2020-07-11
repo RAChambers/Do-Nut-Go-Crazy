@@ -45,4 +45,7 @@ img{
     font-size: 35px;
     cursor: pointer;
   }
+  .container .section{
+    vertical-align: middle;
+  }
   

@@ -3,6 +3,11 @@
 <head>
   <script>
       function update(){
+        document.getElementById('text').value = donutcount;
+          document.text = donutcount + "Donuts";
+          document.getElementById('amountAutoClick').innerHTML = "You own " + autoClick + " Auto Clickers";
+          document.id = donutcount + "Donuts";
+          document.getElementById('costAutoClick').innerHTML = ((autoClick+1) * 10) + " Donuts";
 
       }
 
@@ -39,77 +44,83 @@
   
     <div id="b1" class="containerTab" style="display:none;background:#8B4513">
       <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-      <h2>Fred the Baker Baking Company</h2>
-      <p>Fred the Baker has been in business baking delicious donuts for 25 years! 
+      <h1>Fred the Baker Baking Company</h1>
+      <p><h2>Fred the Baker has been in business baking delicious donuts for 25 years!
           He is ready to retire but somehow wants his love for donuts continue on. 
-          Fred has created Donuts Amok! so that everyone can virtually bake donuts forever!</p>
+        Fred has created Donuts Amok! so that everyone can virtually bake donuts forever!</h2></p>
     </div>
 
     <div id="b2" class="containerTab" style="display:none;background:#F9E9B3">
       <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-      <h2>A-HA!</h2>
-      <p><b>Do-nut Go Crazy! was inspired and modeled after a game created by a French programmer in 2013 called <italics>Cookie Clicker</italics>.
+      <h1>A-HA!</h1>
+      <p><h2>Do-nut Go Crazy! was inspired and modeled after a game created by a French programmer in 2013 called <italics>Cookie Clicker</italics>.
           By clicking on the donut, users can virtually bake a single donut per click. They can then use those donuts to buy 
-          purchase <italics>Auto Clickers & Click Multipliers</italics> which can create/bake even more donuts!!</b></p>
+          purchase <italics>Auto Clickers & Click Multipliers</italics> which can create/bake even more donuts!!</h2></p>
     </div>
 
     <div id="b3" class="containerTab" style="display:none;background:pink">
       <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-      <h2>GYRLCODE</h2>
-      <p>We are an advertising and design firm, situated in downtown Columbus, Ohio.  
+      <h1>GYRLCODE</h1>
+      <p><h2>We are an advertising and design firm, situated in downtown Columbus, Ohio.
           We specialize in Web, Marketing and Advertising Campaign Development.<br>
           Contact us:<br>
           1177 East Broad Street <br>Columbus, Ohio 43209
-          <br>(614) 462-0560    </p>
+          <br>(614) 462-0560 </h2></p>
     </div>      
   </div>
-     <a href="#" onclick="add()"><img src="images\chocolatedonut.png" alt=""></a>         
-    <h2>You have:<input type="text" id="text" disabled style="text-align: center;"> donuts!</h2>
-    <script>
-      function add() {
-        donutcount = donutcount + 1
-        document.getElementById('text').value = donutcount;
-        document.title = donutcount + "Donuts"
-      }      
-    </script>
-    <button><a href="#" onclick="save()">Save</a></button>   
-    <button><a href="#" onclick="Load()">Load</a></button>   
-    <br><br>
-    <a href="#" onclick="buyAutoClick()"><img src="images\chocolatedonut.png" alt=""></a>
-    <h2>Buy 1 Auto-Clicker</h2>
+  <script>
+    function openTab(tabName) {
+      var i, x;
+      x = document.getElementsByClassName("containerTab");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      document.getElementById(tabName).style.display = "block";
+    }
+  </script> 
+  <div class="container">
+    <section>
+       <a href="#" onclick="add()"><img src="images\chocolatedonut.png" alt=""></a>         
+      <h2>You have:<input type="text" id="text" disabled style="text-align: center;"> donuts!</h2>
+      <script>
+        function add() {
+          donutcount = donutcount + 1
+          update()
+        }      
+      </script>
+      <button><a href="#" onclick="save()">Save</a></button>   
+      <button><a href="#" onclick="Load()">Load</a></button>   
+      <br>
+    </section>
+    <section>
+      <a href="#" onclick="buyAutoClick()"><img src="images\—Pngtree—grey arc donut food element_4708348.png" alt="donut-clicker-button"></a>
+      <h2>Buy 1 Auto Clicker</h2>
+      <p id="costAutoClick">10 Donuts</p>
+      <p id="amountAutoClick"> You Own 0 Auto Clickers</p>
 
-    <script>
-        function openTab(tabName) {
-          var i, x;
-          x = document.getElementsByClassName("containerTab");
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-          }
-          document.getElementById(tabName).style.display = "block";
-        }
-        </script> 
-     <script src="/src/app.js"></script>
-     <script src="./js/main.js"></script>
-     <br><br>
-     <button><a href="#" onclick="save()">Save</a></button>   
-     <button><a href="#" onclick="Load()">Load</a></button>   
-     <br><br>
-
-     <!-- <p>Buy 1 Auto-Clicker</p>
-     <button><a href="#" onclick="buyAutoClick()"><img src="images\pinkdonut.png"></a></button> -->
-
-     <script>
+      <script>
        function save(){
          localStorage.setItem("donutcount", donutcount);
+         localStorage.setItem("autoClick", autoClick);
        }
        function load(){
          donutcount = localStorage.getItem("donutcount");
          donutcount = parseInt(donutcount);
-         document.getElementById('text').value = donutcount;
-         document.title = donutcount + "Donuts";
+         autoClick = localStorage.getItem("autoClick");
+         autoClick = parseInt(autoClick);
+         update()
        }
+       function buyAutoClick(){
+         if (donutcount >= ((autoClick+1) * 10)){
+           donutcount = donutcount - ((autoClick+1) * 10);
+           autoClick = autoClick + 1;
+           update()
 
-     </script>
+         }
+       }
+     <script src="/src/app.js"></script>
+     <script src="./js/main.js"></script>
+     
 
     </div>  
 </body>

@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
   <script>
-      function update(){
-        document.getElementById('text').value = donutcount;
-          document.text = donutcount + "Donuts";
-          document.getElementById('amountAutoClick').innerHTML = "You own " + amountAutoClick + " Auto Donut Clickers";
-          document.amountAutoClick = donutcount + "Donuts";
-          document.getElementById('costAutoClick').innerHTML = ((autoClick+1) * 10) + " Donuts";
-          document.costAutoClick = costAutoClick - donutcount + "Donuts";
-      }
+      // function update(){
+      //   document.getElementById('text').value = donutcount;
+      //     document.text = donutcount + "Donuts";
+      //     document.getElementById('amountAutoClick').innerHTML = "You own " + amountAutoClick + " Auto Donut Clickers";
+      //     document.amountAutoClick = donutcount + "Donuts";
+      //     document.getElementById('costAutoClick').innerHTML = ((autoClick+1) * 10) + " Donuts";
+      //     document.costAutoClick = costAutoClick - donutcount + "Donuts";
+      // }
 
-      var donutcount = 0;
-      var autoClick = 0;
-      function timer(){
-        donutcount = donutcount + autoClick;
-      update()
-      }
-      setInterval(timer, 1000);
+      // var donutcount = 0;
+      // var autoClick = 0;
+      // function timer(){
+      //   donutcount = donutcount + autoClick;
+      // update()
+      // }
+      // setInterval(timer, 1000);
   </script>
   <title>The Do-nut Go Crazy Game</title>
     <meta charset="UTF-8">
@@ -69,84 +69,43 @@
     </div>      
   </div>
   <script>
-    function openTab(tabName) {
-      var i, x;
-      x = document.getElementsByClassName("containerTab");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      document.getElementById(tabName).style.display = "block";
-    }
+    // function openTab(tabName) {
+    //   var i, x;
+    //   x = document.getElementsByClassName("containerTab");
+    //   for (i = 0; i < x.length; i++) {
+    //     x[i].style.display = "none";
+    //   }
+    //   document.getElementById(tabName).style.display = "block";
+    // }
   </script> 
   <div class="row">
     <section class="column">
        <a href="#" onclick="add()"><img src="images\chocolatedonut.png" alt=""></a>         
       <h2>You have:<input type="text" id="text" disabled style="text-align: center;"> donuts!</h2>
-      <script>
-        function add() {
-          donutcount = donutcount + 1
-          update()
-        }      
+      
+       
       </script>
-      <button><a href="#" onclick="save()">Save</a></button>   
-      <button><a href="#" onclick="Load()">Load</a></button>   
-      <br>
+      
     </section>
     <section class="column">
       <a href="#" onclick="buyAutoClick()"><img src="images\—Pngtree—grey arc donut food element_4708348.png" alt="donut-clicker-button"></a>
-      <h2>Click the Donuts to Buy an Auto Donut Maker for 10 Donuts Each</h2>
+      <h2>The Cost to Buy an Auto Donut Maker is:
       <p id="costAutoClick">10 Donuts</p>
-      <p id="amountAutoClick"> You Own + buyAutoClick + Auto Clickers</p>
+      <p id="amountAutoClick"> You Own + buyAutoClick + Auto Clickers</p></h2>
 
-      <script>
-       function save(){
-         localStorage.setItem("donutcount", donutcount);
-         localStorage.setItem("autoClick", autoClick);
-       }
-       function load(){
-         donutcount = localStorage.getItem("donutcount");
-         donutcount = parseInt(donutcount);
-         autoClick = localStorage.getItem("autoClick");
-         autoClick = parseInt(autoClick);
-         update()
-       }
-       function buyAutoClick(){
-         if (donutcount >= ((autoClick+1) * 10)){
-           donutcount = donutcount - ((autoClick+1) * 10);
-           autoClick = autoClick + 1;
-           update()
-         }
-        </script>
+     
     </section>
     <section class="column">
       <a href="#" onclick="buyDonutMultiplier()"><img src="images\—Pngtree—set delicious donuts in glaze_3562464.png" alt="donut-multiplier"></a>
-      <h2>Buy Donut Multipliers for 20 Donuts Each</h2>
+      <h2>The Cost to Buy a Donut Multiplier is:
       <p id="costDonutMultiplier">20 Donuts</p>
-      <p id="amountDonutMultiplier"> You Own + buyDonutMultiplier + Auto Clickers + "Donuts!"</p>
+      <p id="amountDonutMultiplier"> You Own + buyDonutMultiplier + "Donuts!"</p></h2>
 
-      <script>
-       function save(){
-         localStorage.setItem("donutcount", donutcount);
-         localStorage.setItem("donutMultiplier", donutMultiplier);
-       }
-       function load(){
-         donutcount = localStorage.getItem("donutcount");
-         donutcount = parseInt(donutcount);
-         donutMultiplier = localStorage.getItem("donutMultiplier");
-         donutMultiplier = parseInt(donutMultiplier);
-         update()
-       }
-       function buyAutoClick(){
-         if (donutcount >= ((donutMultiplier+1) * 10)){
-           donutcount = donutcount - ((donutMultiplier+1) * 10);
-           donutMultiplier = donutMultiplier + 1;
-           update()
-         } 
-         </script>
+     
       </section>
   </div>
        
-     <script src="/src/app.js"></script>
+     <script src="./src/js/app.js"></script>
      <script src="./js/main.js"></script>
 </div>
 </body>

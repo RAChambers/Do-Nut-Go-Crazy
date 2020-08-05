@@ -20,8 +20,11 @@ function update() {
   Math.round(10 * Math.pow(1.1, autoClick)) + ' Donuts'
   document.costAutoClick = costAutoClick - donutcount + 'Donuts'
 
+  document.getElementById('amountDonutMultiplier').innerHTML =
+  'You Own  '+ DonutMultiplier + 'Donut Multipliers!'
   document.getElementById('costDonutMultiplier').innerHTML =
-  Math.round(20 * Math.pow(2.0,donutMultiplier)) + 'Donuts'
+  Math.round(10 * Math.pow(1.2, donutMultiplier)) + 'Donuts'
+  
 }
 
 var donutcount = 0
@@ -75,8 +78,8 @@ function load() {
   update()
 }
 function buyDonutMultiplier() {
-  if (donutcount >= 20 * Math.round(2.0,donutMultiplier)) {
-    donutcount = donutcount - Math.round(20 * Math.pow(2.0, donutMultiplier))
+  if (donutcount >= 10 * Math.pow(1.2, donutMultiplier)) {
+    donutcount = donutcount - Math.round(10 * Math.pow(1.2, donutMultiplier))
     donutMultiplier = donutMultiplier + 1
     update()
   }

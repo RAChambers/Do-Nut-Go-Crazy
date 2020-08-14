@@ -3,22 +3,20 @@ class Donuts{
         this.donutCount = 0;
         this.autoClick = 0;
         this.costAutoClick = 10;
-        this.DonutMultiplier = 1;
-        this.amountDonutMultiplier = 0;
-        this.costDonutMultiplier = 20;
+        this.AutoMultiplier = 1;
+        this.amountAutoMultiplier = 0;
+        this.costAutoMultiplier = 20;
     }
 
-    // add(){
-    //     this.donutCount += Math.ceil(this.autoDonutMultiplier);
-    //   }
-    buyAutoClick(){
+      buyAutoClick(){
         this.donutCount = Math.round(this.count = this.costAutoClick);
         this.autoClick +=1;
       }
-    buyDonutMultiplier(){
-        this.donutCount = Math.round(this.count - this.costDonutMultiplier);
-        this.autoDonutMultiplier = this.autoDonutMultiplier * 1.2;
-        this.amountDonutMultiplier += 1;
+      buyAutoMultiplier(){
+        this.donutCount = Math.round(this.count = this.costAutoMultiplier);
+        this.autoMultiplier += 1;
+        // this.autoMultiplier * 1.2;
+        // this.amountAutoMultiplier += 1;
       }  
 
 

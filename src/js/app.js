@@ -21,7 +21,7 @@ function update() {
   document.costAutoClick = costAutoClick - donutcount + 'Donuts'
 
   document.getElementById('amountAutoMultiplier').innerHTML =
-  'You Own ' + AutoMultiplier + ' Donut Multipliers!'
+  'You Own ' + autoMultiplier + ' Donut Multipliers!'
   document.amountAutoMultiplier = donutcount + 'Donuts'
   document.getElementById('costAutoMultiplier').innerHTML =
   Math.round(20 * Math.pow(1.2, autoMultiplier)) + ' Donuts'
@@ -61,12 +61,19 @@ function load() {
   update()
 }
 function buyAutoClick() {
-  if (donutcount >=  10 * Math.pow(1.1, autoClick)) {
-    donutcount = donutcount - Math.round(10 * Math.pow(1.1, autoClick) )
+  if (donutcount >=  100 * Math.pow(1.1, autoClick)) {
+    donutcount = donutcount - Math.round(100 * Math.pow(1.1, autoClick) )
     autoClick = autoClick + 1
     update()
   }
 }
+var donutcount = 0
+var autoMultiplier = 0
+function timer() {
+  donutcount = donutcount + autoMultiplier
+  update()
+}
+
 
 function save() {
   localStorage.setItem('donutcount', donutcount)

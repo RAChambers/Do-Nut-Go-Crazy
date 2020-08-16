@@ -4,7 +4,6 @@ class Donuts{
         this.autoClick = 0;
         this.costAutoClick = 100;
         this.autoMultiplier = 0;
-        // this.amountAutoMultiplier = 0;
         this.costAutoMultiplier = 20;
     }
 
@@ -14,9 +13,8 @@ class Donuts{
       }
       buyAutoMultiplier(){
         this.donutCount = Math.round(this.count = this.costAutoMultiplier);
-        this.autoMultiplier += 2;
-        // this.autoMultiplier * 1.2;
-        // this.amountAutoMultiplier += 1;
+        this.autoMultiplier += 1;
+
       }  
 
 

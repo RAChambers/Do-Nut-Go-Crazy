@@ -1,14 +1,4 @@
-// import { DonutMaker } from "./DonutMaker.js";
-// import { HtmlWiringHelper } from "./HtmlWiringHelper.js";
-// const donutMaker = new DonutMaker();
-// const wiringHelper = new HtmlWiringHelper(donutMaker);
-// const donutCount = document.querySelector(".donut-count");
-// const clickimg = document.querySelector(".click-img");
 
-// clickimg.addEventListener("click", () => {
-//   donutMaker.recordClick();
-//   wiringHelper.updateDonutCountDisplay(donutCount);
-// });
 function update() {
   document.getElementById('text').value = donutcount
   document.text = donutcount + 'Donuts'
@@ -17,7 +7,7 @@ function update() {
     'You own ' + autoClick + ' Auto Donut Clickers'
   document.amountAutoClick = donutcount + 'Donuts'
   document.getElementById('costAutoClick').innerHTML =
-  Math.round(10 * Math.pow(1.1, autoClick)) + ' Donuts'
+  Math.round(100 * Math.pow(1.1, autoClick)) + ' Donuts'
   document.costAutoClick = costAutoClick - donutcount + 'Donuts'
 
   document.getElementById('amountAutoMultiplier').innerHTML =

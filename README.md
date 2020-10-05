@@ -1,4 +1,4 @@
-# Basic Browser JavaScript - Do-nut Go Crazy Game
+# Do-nut Go Crazy Game
 
 ###### A tribute to [Cookie Clicker](https://orteil.dashnet.org/cookieclicker/)
 
